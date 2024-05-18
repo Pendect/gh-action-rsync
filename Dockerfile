@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3.19
 
 LABEL version="2.0.0"
 LABEL maintainer="Pendect Tech Team <tech@pendect.com>" \
@@ -8,7 +8,7 @@ LABEL maintainer="Pendect Tech Team <tech@pendect.com>" \
       com.github.actions.icon="truck" \
       com.github.actions.color="blue"
 
-RUN apk add --no-cache --virtual .run-deps rsync=3.1.3-r1 openssh=8.1_p1-r0 && \
+RUN apk add --no-cache --virtual .run-deps rsync=3.3.0 openssh=9.7 && \
     rm -rf /var/cache/apk/*
 
 COPY entrypoint.sh /entrypoint.sh
